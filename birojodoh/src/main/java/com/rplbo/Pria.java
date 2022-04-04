@@ -14,16 +14,16 @@ public class Pria {
     }
 
     public void PDKT(Perempuan calon){
-        if(this.jodoh == null) {
-            this.jodoh = calon;
-            calon.setJodoh(this);
+        if(this.temanKencan == null) {
+            this.temanKencan = calon;
+            calon.setTemanKencan(this);
         }else{
             System.out.println("JANGAN SELINGKUH MAS HEI TOLONG");
         }
     }
 
     public void MengajakKencan(Perempuan perempuan){
-        if(this.jodoh == perempuan) {
+        if(this.temanKencan == perempuan) {
             this.jumlahCinta += 1;
             perempuan.setJumlahCinta(perempuan.getJumlahCinta()+1);
         }else{
@@ -32,11 +32,13 @@ public class Pria {
     }
 
     public void MenembakKekasih(){
-        if(this.jodoh == null){
+        if(this.temanKencan == null){
             System.out.println("SIAPA YANG MAU KAU TEMBAK :') | JANGAN NGAYAL DEH "+this.nama);
-        }else if(jodoh.getStandarJumlahCinta() < jodoh.getJumlahCinta()){
-            System.out.println("KAMU DITOLAK OLEH "+jodoh.getNama()+" | SEMANGAT !! BERSEDIHNYA JANGAN BERLARUT!!.");
+        }else if(temanKencan.getStandarJumlahCinta() > temanKencan.getJumlahCinta()){
+            System.out.println("KAMU DITOLAK OLEH "+temanKencan.getNama()+" | SEMANGAT !! BERSEDIHNYA JANGAN BERLARUT!!.");
         }else{
+            this.jodoh = temanKencan;
+            this.temanKencan.setJodoh(this);
             System.out.println("SELAMAT KAMU DITERIMA :D | SELAMAT MENJALANI HIDUP BARU "+this.nama);
         }
     }

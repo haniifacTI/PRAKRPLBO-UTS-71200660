@@ -16,9 +16,9 @@ public class Perempuan {
     }
 
     public void MengajakKencan(Pria pria){
-        if(this.jodoh == pria) {
+        if(this.temanKencan == pria) {
             this.jumlahCinta += 1;
-            pria.setJumlahCinta(pria.getJumlahCinta()+0.5);
+            temanKencan.setJumlahCinta(temanKencan.getJumlahCinta()+0.5);
         }else{
             System.out.println("KAU JANGAN TIDAK SETIA, JANGAN KAU AJAK PRIA LAIN JALAN!!");
         }
